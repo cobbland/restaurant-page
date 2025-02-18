@@ -1,6 +1,8 @@
 import './styles.css';
 import odinLogo from './odin.png';
 import { generateHome } from './home';
+import { generateAbout } from './about';
+import { generateMenu } from './menu';
 
 const header = document.querySelector('header');
 const logoDiv = document.createElement('div');
@@ -26,6 +28,9 @@ function emptyDiv(div) {
     }
 }
 
+homeButton.classList.add('active-button');
+generateHome(content);
+
 navButtons.addEventListener('click', (button) => {
     if (button.target.innerText === 'Home') {
         button.target.classList.add('active-button');
@@ -38,17 +43,13 @@ navButtons.addEventListener('click', (button) => {
         homeButton.classList.remove('active-button');
         aboutButton.classList.remove('active-button');
         emptyDiv(content);
-        const contentContent = document.createElement('h2');
-        contentContent.innerText = 'This is where the menu goes';
-        content.appendChild(contentContent);
+        generateMenu(content);
     } else if (button.target.innerText === 'About') {
         button.target.classList.add('active-button');
         menuButton.classList.remove('active-button');
         homeButton.classList.remove('active-button');
         emptyDiv(content);
-        const contentContent = document.createElement('h2');
-        contentContent.innerText = 'You wanna know more about us?';
-        content.appendChild(contentContent);
+        generateAbout(content);
     }
 })
 

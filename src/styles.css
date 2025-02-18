@@ -56,21 +56,28 @@ footer {
     height: 4em;
 }
 
-.logo > div,
-.fancy-text {
+.logo > div {
     font-size: 4em;
     font-family: 'Pirata One', display;
-    text-shadow: 2px 2px #297373;
+    text-shadow: 2px 2px 0 #297373;
     color: #297373;
     letter-spacing: 0.1em;
     cursor: default;
     text-align: center;
     -webkit-text-fill-color: #E3B261;
-    -webkit-text-stroke: 1px #297373; 
+    -webkit-text-stroke: 1px #297373;
+    transition: 0.3s;
+}
+
+.logo > div:hover {
+    text-shadow: 4px 4px 1px #297373;
+    letter-spacing: 0.15em;
 }
 
 .fancy-text {
     font-size: 3em;
+    font-family: 'Pirata One', display;
+    color: #297373;
 }
 
 nav {
@@ -85,13 +92,17 @@ nav > button {
     background: none;
     font-size: 1.5em;
     padding: 0.2em 0.5em;
-    transition: 0.3s;
     color: #297373;
     font-weight: bold;
     text-decoration: none;
+    transition: all 0.3s ease-out;
 }
 
-nav > button:hover {
+/* The above transition transitions from default to these settings at page load, 
+which is not desired. */
+
+nav > button:hover,
+nav > button:focus {
     cursor: pointer;
     text-decoration: underline #E3B261;
 }
@@ -101,16 +112,20 @@ nav > button.active-button {
     background-color: #E3B261;
     border: 2px solid #297373;
     text-decoration: none;
+    margin: 0 1em;
+    box-shadow: 2px 2px 0 #297373;
 }
 
-nav > button.active-button:hover {
+nav > button.active-button:hover,
+nav > button.active-button:focus {
     cursor: inherit;
+    box-shadow: 4px 4px 1px #297373;
 }
 
 #content {
     background-color: #FFF8E7;
     height: 100%;
-    width: min(1200px, 100%);
+    width: min(1000px, 100%);
     min-height: max-content;
     padding: 0 2em;
     display: flex;
@@ -123,22 +138,57 @@ nav > button.active-button:hover {
 }
 
 #content > img {
-    width: 80%;
+    width: 100%;
     border-radius: 2px;
-    /* border: 7px solid #297373; */
-    box-shadow: 10px 10px #297373;
+    border: 2px solid #297373;
+    box-shadow: 4px 4px #297373;
+    transition: all 0.3s ease-out;
 }
 
-#content > div {
-    width: 80%;
+#content > img:hover,
+#content > img:focus {
+    box-shadow: 8px 8px 2px #297373;
 }
 
-#content > div.content-content {
-    border: 7px solid #297373;
-    background-color: #FFF8E7;
+.menu-section {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(auto-fit, min(275px, 100%));
+    grid-template-rows: repeat(auto-fit, min(300px, min-content));
+    justify-content: center;
+    gap: 1em;
+}
+
+.menu-item,
+#content > p {
+    background-color: #ffffff88;
     padding: 1em;
-    border-radius: 10px;
-    width: 50%;
-    box-shadow: 0 2px 5px #00000055;
-    border-radius: 20px;
+    border-radius: 2px;
+    border: 2px solid #297373;
+    box-shadow: 4px 4px #297373;
+    transition: all 0.3s ease-out;
+    display: flex;
+    flex-direction: column;
+    color: #000000dd;
+}
+
+.menu-item:hover,
+.menu-item:focus,
+#content > p:hover,
+#content > p:focus {
+    box-shadow: 8px 8px 2px #297373;
+}
+
+.menu-item-name {
+    font-size: 1.5em;
+    color: #297373;
+    font-weight: bold;
+}
+
+.price {
+    color: #E3B261;
+    font-size: 1.4em;
+    font-weight: bold;
+    margin-top: auto;
+    text-align: right;
 }
