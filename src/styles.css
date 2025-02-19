@@ -59,7 +59,7 @@ footer {
 .logo > div {
     font-size: 4em;
     font-family: 'Pirata One', display;
-    text-shadow: 2px 2px 0 #297373;
+    text-shadow: 2px 2px #297373;
     color: #297373;
     letter-spacing: 0.1em;
     cursor: default;
@@ -70,7 +70,7 @@ footer {
 }
 
 .logo > div:hover {
-    text-shadow: 4px 4px 1px #297373;
+    text-shadow: 4px 4px #297373;
     letter-spacing: 0.15em;
 }
 
@@ -113,13 +113,13 @@ nav > button.active-button {
     border: 2px solid #297373;
     text-decoration: none;
     margin: 0 1em;
-    box-shadow: 2px 2px 0 #297373;
+    box-shadow: 2px 2px #297373;
 }
 
 nav > button.active-button:hover,
 nav > button.active-button:focus {
     cursor: inherit;
-    box-shadow: 4px 4px 1px #297373;
+    box-shadow: 4px 4px #297373;
 }
 
 #content {
@@ -127,7 +127,7 @@ nav > button.active-button:focus {
     height: 100%;
     width: min(1000px, 100%);
     min-height: max-content;
-    padding: 0 2em;
+    padding: 0 2em 0.5em;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -143,11 +143,6 @@ nav > button.active-button:focus {
     border: 2px solid #297373;
     box-shadow: 4px 4px #297373;
     transition: all 0.3s ease-out;
-}
-
-#content > img:hover,
-#content > img:focus {
-    box-shadow: 8px 8px 2px #297373;
 }
 
 .menu-section {
@@ -170,13 +165,6 @@ nav > button.active-button:focus {
     display: flex;
     flex-direction: column;
     color: #000000dd;
-}
-
-.menu-item:hover,
-.menu-item:focus,
-#content > p:hover,
-#content > p:focus {
-    box-shadow: 8px 8px 2px #297373;
 }
 
 .menu-item-name {
